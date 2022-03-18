@@ -1,3 +1,5 @@
+// 이번에 하면서 BEM 방식 ( class naming 할때의 방법론) 적용해보고 반응형 처리하는 여러가지 방법들에 대해서도 추가적인 공부가 필요하다잉
+
 /* variables */
 $orange: #ffa600;
 $green: #c1d72e;
@@ -5,3 +7,197 @@ $blue: #82d2e5;
 $grey: #f3f3f3;
 $white: #fff;
 $base-color: $green;
+
+$breakpoints: (
+  xs: 0px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+$base-font-xs: 9;
+$base-font-sm: 9;
+$base-font-md: 11;
+$base-font-lg: 12;
+$base-font-xl: 14;
+
+/* mixin -> 필요할 때마다 만들기 -> 반응형 작업 에 필요한거 미리 설정좀 해놔야할듯 이거 좀 알아봐야겠다. 어떠한 방식들을 사용하는지? */
+@mixin respond-above($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+    @media (min-width: ($breakpoint-value)) {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+@mixin respond-below($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+    @media (max-width: ($breakpoint-value - 1)) {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+@mixin respond-between($lower, $upper) {
+  @if map-has-key($breakpoints, $lower) and map-has-key($breakpoints, $upper) {
+    $lower-breakpoint: map-get($breakpoints, $lower);
+    $upper-breakpoint: map-get($breakpoints, $upper);
+    @media (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint - 1)) {
+      @content;
+    }
+  } @else {
+    @if (map-has-key($breakpoints, $lower) == false) {
+      @warn 'Invalid breakpoint: #{$lower}.';
+    }
+    @if (map-has-key($breakpoints, $upper) == false) {
+      @warn 'Invalid breakpoint: #{$upper}.';
+    }
+  }
+}
+
+@mixin flex($h: center, $v: center) {
+  display: flex;
+  justify-content: $h;
+  align-items: $v;
+}
+
+/* element css - base setting */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+/* css  */
+html {
+  -webkit-user-drag: none;
+  @include respond-below(sm) {
+    font-size: $base-font-xs + px !important;
+  }
+  @include respond-between(sm, md) {
+    font-size: $base-font-sm + px !important;
+  }
+  @include respond-between(md, lg) {
+    font-size: $base-font-md + px !important;
+  }
+  @include respond-between(lg, xl) {
+    font-size: $base-font-lg + px !important;
+  }
+  @include respond-below(xl) {
+    font-size: $base-font-xl + px !important;
+  }
+}
+
+body {
+  background-color: $base-color;
+  margin: 0;
+  color: $white;
+}
+
+.container {
+  height: 100vh;
+  width: 50%;
+  margin: auto;
+}
+
+.header-wrapper {
+  text-align: center;
+  margin-bottom: 2rem;
+  &__title {
+    margin-bottom: 1rem;
+  }
+  &__sub-title {
+    margin-bottom: 1rem;
+  }
+  &__content {
+  }
+}
+
+.alphabet-wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  &__alphabet {
+    @include flex;
+    font-weight: bold;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    background-color: $white;
+    color: $base-color;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    &:hover {
+      background-color: $base-color;
+      color: $white;
+      border: 1px solid $white;
+    }
+  }
+}
+
+.problem-wrapper {
+  &__chosen-category {
+    margin-bottom: 1rem;
+    width: 100%;
+    @include flex;
+  }
+  &__problem {
+    @include flex;
+    margin-bottom: 1rem;
+  }
+  &__spelling {
+    margin-right: 1rem;
+  }
+  &__my-lives {
+    @include flex;
+    margin-bottom: 1rem;
+  }
+  &__clue {
+    @include flex;
+    margin-bottom: 1rem;
+  }
+}
+
+.canvas-wrapper {
+  margin-bottom: 1rem;
+}
+
+.button-wrapper {
+  @include flex;
+  button {
+    background-color: $base-color;
+    color: $white;
+    border-radius: 0.5rem;
+    border: 1px solid $white;
+  }
+  &__hint-button {
+    padding: 1rem 3rem;
+    margin-right: 1rem;
+  }
+  &__replay-button {
+    padding: 1rem 3rem;
+  }
+}

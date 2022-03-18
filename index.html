@@ -4,31 +4,68 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hangman Game</title>
-    <link rel="stylesheet" href="index.css" />
+    <title>Hangman</title>
+    <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
-    <div class="wrapper">
-      <h1>Hangman</h1>
-      <p>
-        Use the alphabet below to guess the word, or click hint to get a clue.
-      </p>
+    <div class="container">
+      <header class="header-wrapper">
+        <h1 class="header-wrapper__title">HANGMAN</h1>
+        <h2 class="header-wrapper__sub-title">Canvas를 활용한 Hangman game!</h2>
+        <p class="header-wrapper__content">
+          아래의 알파벳을 사용해서 어떤 단어인지 맞춰보세요!
+        </p>
+      </header>
+      <section class="alphabet-wrapper">
+        <div class="alphabet-wrapper__alphabet">a</div>
+        <div class="alphabet-wrapper__alphabet">b</div>
+        <div class="alphabet-wrapper__alphabet">c</div>
+        <div class="alphabet-wrapper__alphabet">d</div>
+        <div class="alphabet-wrapper__alphabet">e</div>
+        <div class="alphabet-wrapper__alphabet">f</div>
+        <div class="alphabet-wrapper__alphabet">g</div>
+        <div class="alphabet-wrapper__alphabet">h</div>
+        <div class="alphabet-wrapper__alphabet">i</div>
+        <div class="alphabet-wrapper__alphabet">j</div>
+        <div class="alphabet-wrapper__alphabet">k</div>
+        <div class="alphabet-wrapper__alphabet">l</div>
+        <div class="alphabet-wrapper__alphabet">m</div>
+        <div class="alphabet-wrapper__alphabet">n</div>
+        <div class="alphabet-wrapper__alphabet">o</div>
+        <div class="alphabet-wrapper__alphabet">p</div>
+        <div class="alphabet-wrapper__alphabet">q</div>
+        <div class="alphabet-wrapper__alphabet">r</div>
+        <div class="alphabet-wrapper__alphabet">s</div>
+        <div class="alphabet-wrapper__alphabet">t</div>
+        <div class="alphabet-wrapper__alphabet">u</div>
+        <div class="alphabet-wrapper__alphabet">v</div>
+        <div class="alphabet-wrapper__alphabet">w</div>
+        <div class="alphabet-wrapper__alphabet">x</div>
+        <div class="alphabet-wrapper__alphabet">y</div>
+        <div class="alphabet-wrapper__alphabet">z</div>
+      </section>
+      <section class="problem-wrapper">
+        <h3 class="problem-wrapper__chosen-category">
+          The Chose Category is Animals
+        </h3>
+        <div class="problem-wrapper__problem">
+          <div class="problem-wrapper__spelling">_</div>
+          <div class="problem-wrapper__spelling">_</div>
+          <div class="problem-wrapper__spelling">_</div>
+          <div class="problem-wrapper__spelling">_</div>
+          <div class="problem-wrapper__spelling">_</div>
+        </div>
+        <div class="problem-wrapper__my-lives">You have 10 lives</div>
+        <div class="problem-wrapper__clue">Clue -</div>
+      </section>
+      <section class="canvas-wrapper">
+        <canvas></canvas>
+      </section>
+      <footer class="button-wrapper">
+        <button class="button-wrapper__hint-button">Hint</button>
+        <button class="button-wrapper__replay-button">Play again</button>
+      </footer>
     </div>
-    <div class="wrapper">
-      <div id="buttons"></div>
-      <p id="categoryName"></p>
-      <div id="hold"></div>
-      <p id="mylives"></p>
-      <p id="clue">Clue -</p>
-      <canvas id="stickman"
-        >This Text will show if the Browser does NOT support HTML5 Canvas
-        tag</canvas
-      >
-      <div class="container">
-        <button id="hint">Hint</button>
-        <button id="reset">Play again</button>
-      </div>
-    </div>
-    <script src="index.js"></script>
+    <script src="./index.js"></script>
   </body>
 </html>
