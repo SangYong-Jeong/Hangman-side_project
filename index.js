@@ -229,31 +229,76 @@ UI 기획
 
 */
 
+// constant
+const categories = ['Animals', 'Home', 'Clothes', 'Food', 'Jobs', 'Sports', 'Countries', 'Colors', 'Transport'];
+
+
+// 문제 같은 경우에는 해당 배열의 순서를 random 으로 섞어서 { problem: string; hint: string } 이 형태로 짜는게 제일 베스트일 것 같다.
+
+// Animals 카테고리로 테스트 진행하면서 개발
+const problem_word_animals = [{ problem: 'monkey', hint: 'it likes bananas' }, 'lion', {problem: 'tiger', hint: 'it has stripes on its body'}, 'dog', 'cat'];
+const problem_word_home = [];
+const problem_word_clothes = [];
+const problem_word_food = [];
+const problem_word_jobs = [];
+const problem_word_sports = [];
+const problem_word_countries = [];
+const problem_word_colors = [];
+const problem_word_transport = [];
+
 window.onload = function () {
-  const categories = ['Animals', 'Home', 'Clothes', 'Food', 'Jobs', 'Sports', 'Countries', 'Colors', 'Transport'];
+  const alphabet = ['a', 'b', 'c', 'd', 'e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+
   // container 
+  const start_container = document.querySelector('.start-wrapper');
   const category_container = document.querySelector('.category-wrapper');
   const problem_container = document.querySelector('.problem-wrapper');
 
   // wrapper 
+  const start_wrapper = document.querySelector('.start-wrapper__wrap');
+  const loading_wrapper = document.querySelector('.progress');
   const category_wrapper = document.querySelector('.category-wrapper__wrap');
   const alphabet_wrapper = document.querySelector('.alphabet-wrapper');
   const problem_wrapper = document.querySelector('.problem-wrapper__problem');
   const life_wrapper = document.querySelector('.problem-wrapper__my-lives');
   const clue_wrapper = document.querySelector('.problem-wrapper__clue');
   const hangman = document.getElementById('hangman');
-  let chosen_category = '';
+  const context = hangman.getContext('2d');
+  
 
-  function hangmanGameStart () {
-    
+  // element
+  const start_button = document.querySelector('.start-wrapper__button');
+
+  // variables
+  let chosen_category = '';
+  let problem = '';
+  let clicked = [];
+  let answer = [];
+  let lives = 10;
+
+  let hint_count = 1;
+  let hint = '';
+
+  // event
+  start_button.addEventListener('click', onClickStartButton);
+
+  function onClickStartButton (event) {
+    // start_button 클릭 시 일어나는 햔싱
+    start_container.style.display = 'none';
+    loading_wrapper.style.display = 'block';
+    setTimeout(() => {
+      loading_wrapper.style.display = 'none';
+      category_container.style.display = 'block';
+      initCategory();
+    }, 2000)
   }
 
   function onClickCategory (event) {
     chosen_category = event.target.innerHTML;
     // 여기서 이제 hangman game이 나오면 될 것 같다.
+    // 클릭시 로딩바 한 번 띄워주고 끝나면 alphabet-wrapper, problem-wrapper, canvas-wrapper, button-wrapper를 나오게 하면 된다. display 변경
   }
-
-  function init () {
+  function initCategory () {
     for (let i = 0; i < categories.length; i++) {
       const category_list = document.createElement('div');
       category_list.classList.add('category-wrapper__wrap__category');
@@ -263,7 +308,6 @@ window.onload = function () {
     }
   }
 
-  init();
 }
 
 // border 가 계속 움직이는 animation 있으면 좋을 것 같다. 추가해보자!
