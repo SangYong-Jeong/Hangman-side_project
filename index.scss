@@ -47,6 +47,7 @@ body {
   background-color: $base-color;
   margin: 0;
   color: $white;
+  position: relative;
 }
 
 .container {
@@ -90,6 +91,10 @@ body {
   }
   &__sub-title {
     margin-bottom: 1rem;
+  }
+  &__count {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
   }
   &__content {
   }
@@ -141,13 +146,11 @@ body {
 }
 
 .alphabet-wrapper {
-  display: none;
   width: 100%;
-  display: flex;
   flex-wrap: wrap;
   margin-bottom: 2rem;
-  justify-content: center;
-  align-items: center;
+  @include flex;
+  display: none;
   &__alphabet {
     @include flex;
     font-weight: bold;
@@ -200,7 +203,7 @@ body {
 }
 
 .canvas-wrapper {
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
   @include flex;
   display: none;
   canvas {
@@ -213,18 +216,27 @@ body {
 .button-wrapper {
   @include flex;
   display: none;
+  width: 100%;
   button {
+    width: 33.3333%;
     background-color: $base-color;
     color: $white;
     border-radius: 0.5rem;
+    padding: 1rem 0;
+    height: 10%;
     border: 1px solid $white;
+    &:hover {
+      color: $base-color;
+      background-color: $white;
+      border-style: dashed;
+      border-color: $black;
+    }
   }
   &__hint-button {
-    padding: 1rem 3rem;
     margin-right: 1rem;
   }
   &__replay-button {
-    padding: 1rem 3rem;
+    margin-right: 1rem;
   }
 }
 
@@ -264,6 +276,77 @@ body {
   animation: progres 4s infinite linear;
   animation-duration: 2s;
 }
+
+.congratulation-modal {
+  position: absolute;
+  background-color: rgba(0 , 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  @include flex;
+  display: none;
+  &__wrap {
+    width: 35rem;
+    height: 25rem;
+    background-color: $grey_2;
+    color: $black;
+    flex-direction: column;
+    @include flex(flex-start, center);
+    border-radius: 20px;
+  }
+  &__title {
+    @include flex;
+    width: 100%;
+    height: 15%;
+    font-size: 1.25rem;
+    font-weight: bold;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: $orange;
+    span {
+      color: $white
+    }
+  }
+  &__content {
+    width: 100%;
+    height: 65%;
+    text-align: center;
+    line-height: 1.5;
+    font-size: 1.125rem;
+    @include flex;
+    flex-direction: column;
+    color: $white;
+    font-weight: bold;
+    span {
+      &:first-child {
+        margin-bottom: 0.5rem;
+        font-size: 1.5rem;
+      }
+      &:nth-child(3) {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+  &__button-wrap {
+    width: 100%;
+    height: 20%;
+    @include flex;
+    button {
+      width: 50%;
+      height: 65%;
+      background-color: $blue;
+      color: $white;
+      border-radius: 10px;
+      font-size: 1.125rem;
+      &:hover {
+        background-color: $black;
+      }
+    }
+  }
+}
+
 @keyframes progres {
   0% {
     width: 0%;
