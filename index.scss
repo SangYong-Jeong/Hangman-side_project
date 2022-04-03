@@ -3,6 +3,8 @@
 @import '_variable.scss';
 @import '_mixin.scss';
 
+
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Lato&family=Press+Start+2P&display=swap');
 /* element css - base setting */
 
 * {
@@ -85,9 +87,21 @@ body {
 }
 
 .header-wrapper {
+  font-family: 'Press Start 2P', 'Do Hyeon',
+  sans-serif;
+  letter-spacing: 2px;
   height: 15%;
   text-align: center;
   margin-bottom: 2rem;
+  @media screen and (max-width: 666px) {
+    font-size: 12px;
+  }
+  @media screen and (max-width: 593px) {
+    font-size: 10px;
+  }
+  @media screen and (max-width: 519px) {
+    font-size: 9px;
+  }
   &__title {
     margin-bottom: 1rem;
   }
@@ -97,6 +111,8 @@ body {
 }
 
 .problem-header-wrapper {
+  font-family: 'Do Hyeon',
+  sans-serif;
   display: none;
   text-align: center;
   height: 6.9rem;
@@ -110,12 +126,21 @@ body {
     margin-bottom: 1rem;
     font-size: 1.5rem;
   }
+  &__content {
+    font-size: 1.25rem;
+  }
 }
 
 .start-wrapper {
+  font-family: 'Press Start 2P',
+  'Do Hyeon',
+  sans-serif;
   position: relative;
   height: calc(100% - 15% - 2rem);
   &__title {
+    @media screen and (max-width: 736px) {
+      width: 100%;
+    }
   }
   &__wrap {
     height: 100%;
@@ -135,11 +160,15 @@ body {
 }
 
 .category-wrapper {
+  font-family: 'Press Start 2P',
+  'Do Hyeon',
+  sans-serif;
   position: relative;
   display: none;
   width: 100%;
   height: calc(100% - 15% - 2rem);
   &__title {
+    letter-spacing: 2px;
     @media screen and (max-width: 710px) {
       width: 100%;
     }
@@ -153,7 +182,7 @@ body {
       width: 20%;
       height: 10rem;
       margin: 1rem 1%;
-      font-size: 2rem;
+      font-size: 1.15rem;
       font-weight: bold;
       border: 2px dashed $white;
       transition: all 0.45s;
@@ -180,9 +209,13 @@ body {
   height: calc(100% - 6.9rem);
   border-bottom-left-radius: 24px;
   border-bottom-right-radius: 24px;
+  display: none;
 }
 
 .alphabet-wrapper {
+  font-family: 'Lato',
+  sans-serif;
+  font-weight: bold;
   width: 60%;
   height: 28%;
   margin-left: auto;
@@ -190,7 +223,6 @@ body {
   flex-wrap: wrap;
   margin-bottom: 2rem;
   @include flex;
-  display: none;
   padding: 1rem;
   border: 4px dashed $orange;
   @media screen and (max-width: 978px) {
@@ -203,7 +235,7 @@ body {
   &__alphabet {
     @include flex;
     align-self: center;
-    font-weight: bold;
+    // font-weight: bold;
     border-radius: 0.25rem;
     cursor: pointer;
     background-color: $white;
@@ -236,9 +268,8 @@ body {
 }
 
 .problem-wrapper {
-  display: none;
   height: 25%;
-  font-weight: bold;
+  
   &__chosen-category {
     margin-bottom: 1rem;
     width: 100%;
@@ -252,6 +283,7 @@ body {
     border: 2px dashed $white;
     width: 50%;
     margin: auto;
+    font-weight: bold;
     div {
       @include flex;
     }
@@ -262,10 +294,16 @@ body {
   &__my-lives {
     @include flex;
     margin-top: 1rem;
+    font-family: 
+    'Do Hyeon',
+    sans-serif;
   }
   &__clue {
     @include flex;
     margin-top: 1rem;
+    font-family: 
+    'Do Hyeon',
+    sans-serif;
   }
 }
 
@@ -274,7 +312,6 @@ body {
   height: 30%;
   margin-bottom: 1rem;
   @include flex;
-  display: none;
   canvas {
     height: 100%;
     color: $white;
@@ -287,7 +324,6 @@ body {
 .button-wrapper {
   height: calc(100% - 83% -  3rem);
   @include flex;
-  display: none;
   width: 80%;
   width: calc(50% + 2rem);
   margin: auto;
@@ -296,12 +332,12 @@ body {
     width: 100%;
   }
   button {
+    font-family: 'Press Start 2P', cursive;
     width: 33.3333%;
     background-color: $base-color;
     color: $white;
     height: 100%;
     font-size: 1.25rem;
-    font-weight: bold;
     @include flex;
     &:nth-child(1),
     &:nth-child(2) {

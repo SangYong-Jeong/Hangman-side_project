@@ -84,6 +84,7 @@ window.onload = function () {
   const problem_header_container = document.querySelector('.problem-header-wrapper');
   const start_container = document.querySelector('.start-wrapper');
   const category_container = document.querySelector('.category-wrapper');
+  const problem_page_container = document.querySelector('.problem-container');
   const problem_container = document.querySelector('.problem-wrapper');
   const loading_container = document.querySelector('.progress-wrapper');
   const alphabet_container = document.querySelector('.alphabet-wrapper');
@@ -146,10 +147,7 @@ window.onload = function () {
     // start_button 클릭 시 일어나는 햔싱
     if (op === 'back') {
       category_wrapper.innerHTML = '';
-      alphabet_container.style.display = 'none';
-      canvas_container.style.display = 'none';
-      problem_container.style.display = 'none';
-      button_container.style.display = 'none';
+      problem_page_container.style.display = 'none'
       count_wrapper.style.display = 'none';
       header_container.style.display = 'block';
       problem_header_container.style.display = 'none';
@@ -169,10 +167,7 @@ window.onload = function () {
     header_container.style.display = 'none';
     problem_header_container.style.display = 'block'
     category_container.style.display = 'none';
-    alphabet_container.style.display = 'flex';
-    problem_container.style.display = 'block';
-    canvas_container.style.display = 'flex';
-    button_container.style.display = 'flex';
+    problem_page_container.style.display = 'block'
   }
 
   function shuffleProblem(problems) {
@@ -192,10 +187,7 @@ window.onload = function () {
 
   function initStart() {
     end_modal.style.display = 'none'
-    alphabet_container.style.display = 'none';
-    problem_container.style.display = 'none';
-    button_container.style.display = 'none';
-    canvas_container.style.display = 'none';
+    problem_page_container.style.display = 'block'
     loading_container.style.display = 'flex';
     header_container.style.display = 'block';
     problem_header_container.style.display = 'none';
@@ -332,7 +324,7 @@ window.onload = function () {
   function showHint () {
     if (chosen_problem_hint_count > 0) {
       // 힌트 하나 준다. clue-wrapper update 필요
-      clue_wrapper.innerHTML += ' ' + chosen_problem_hint;
+      clue_wrapper.innerHTML += `<span style="color: red; margin-left: 1rem;">${chosen_problem_hint}</span>`;
     }
     chosen_problem_hint_count -= 1;
   }
@@ -408,4 +400,7 @@ design 느낌 대로 하는중 + problem-header-wrapper 카테고리로 돌아�
 clue 같은 경우 좀 강조되게 clue 라는 거 알려줄 수 있게 세팅
 game over 시 modal 이용해서 게임 오버 되었고 button 클릭 시 다시 카테고리로 보내기
 전체적으로 감싸는 wrapper 하나 만들기
+1차 완성
+
+-> 모음 먼저 선택하는 기능 있으면 좋을 것 같다.
 */
