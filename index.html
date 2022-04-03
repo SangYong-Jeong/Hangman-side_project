@@ -12,8 +12,10 @@
       <header class="header-wrapper">
         <h1 class="header-wrapper__title">HANGMAN</h1>
         <h2 class="header-wrapper__sub-title">Canvas를 활용한 Hangman game!</h2>
-        <h3 class="header-wrapper__count"></h3>
-        <p class="header-wrapper__content">
+      </header>
+      <header class="problem-header-wrapper">
+        <h3 class="problem-header-wrapper__count"></h3>
+        <p class="problem-header-wrapper__content">
           아래의 알파벳을 사용해서 어떤 단어인지 맞춰보세요!
         </p>
       </header>
@@ -35,23 +37,25 @@
         </h2>
         <div class="category-wrapper__wrap dashed-wrap"></div>
       </section>
-      <section class="alphabet-wrapper"></section>
-      <section class="problem-wrapper">
-        <h3 class="problem-wrapper__chosen-category">
-          <!-- 선택한 카테고리는 Animals 입니다. -->
-        </h3>
-        <div class="problem-wrapper__problem"></div>
-        <div class="problem-wrapper__my-lives"></div>
-        <div class="problem-wrapper__clue">Clue -</div>
-      </section>
-      <section class="canvas-wrapper">
-        <canvas id="hangman"></canvas>
-      </section>
-      <footer class="button-wrapper">
-        <button class="button-wrapper__hint-button">힌트</button>
-        <button class="button-wrapper__replay-button">다시 시작</button>
-        <button class="button-wrapper__back-button">카테고리로 이동</button>
-      </footer>
+      <div class="problem-container">
+        <section class="alphabet-wrapper"></section>
+        <section class="problem-wrapper">
+          <h3 class="problem-wrapper__chosen-category">
+            <!-- 선택한 카테고리는 Animals 입니다. -->
+          </h3>
+          <div class="problem-wrapper__problem"></div>
+          <div class="problem-wrapper__my-lives"></div>
+          <div class="problem-wrapper__clue">Clue -</div>
+        </section>
+        <section class="canvas-wrapper">
+          <canvas id="hangman"></canvas>
+        </section>
+        <footer class="button-wrapper">
+          <button class="button-wrapper__hint-button">힌트</button>
+          <button class="button-wrapper__replay-button">다시 시작</button>
+          <button class="button-wrapper__back-button">카테고리로 이동</button>
+        </footer>
+      </div>
       <div class="congratulation-modal">
         <div class="congratulation-modal__wrap">
           <div class="congratulation-modal__title">

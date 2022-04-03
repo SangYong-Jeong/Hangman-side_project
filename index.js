@@ -80,6 +80,8 @@ window.onload = function () {
   const alphabet = ['a', 'b', 'c', 'd', 'e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 
   // container 
+  const header_container = document.querySelector('.header-wrapper');
+  const problem_header_container = document.querySelector('.problem-header-wrapper');
   const start_container = document.querySelector('.start-wrapper');
   const category_container = document.querySelector('.category-wrapper');
   const problem_container = document.querySelector('.problem-wrapper');
@@ -90,7 +92,7 @@ window.onload = function () {
 
   // wrapper 
   const start_wrapper = document.querySelector('.start-wrapper__wrap');
-  const count_wrapper = document.querySelector('.header-wrapper__count');
+  const count_wrapper = document.querySelector('.problem-header-wrapper__count');
   const category_wrapper = document.querySelector('.category-wrapper__wrap');
   const problem_wrapper = document.querySelector('.problem-wrapper__problem');
   const life_wrapper = document.querySelector('.problem-wrapper__my-lives');
@@ -149,6 +151,8 @@ window.onload = function () {
       problem_container.style.display = 'none';
       button_container.style.display = 'none';
       count_wrapper.style.display = 'none';
+      header_container.style.display = 'block';
+      problem_header_container.style.display = 'none';
     }
     start_container.style.display = 'none';
     loading_container.style.display = 'flex';
@@ -162,6 +166,8 @@ window.onload = function () {
   function onClickCategory (event) {
     chosen_category_id = event.target.dataset['id'];
     initGame('start')
+    header_container.style.display = 'none';
+    problem_header_container.style.display = 'block'
     category_container.style.display = 'none';
     alphabet_container.style.display = 'flex';
     problem_container.style.display = 'block';
@@ -191,6 +197,8 @@ window.onload = function () {
     button_container.style.display = 'none';
     canvas_container.style.display = 'none';
     loading_container.style.display = 'flex';
+    header_container.style.display = 'block';
+    problem_header_container.style.display = 'none';
     count_wrapper.innerHTML = '';
     setTimeout(() => {
         start_container.style.display = 'block';
@@ -334,7 +342,7 @@ window.onload = function () {
     lives = 10;
     alphabet_container.innerHTML = '';
     problem_wrapper.innerHTML = '';
-    clue_wrapper.innerHTML = '';
+    clue_wrapper.innerHTML = 'Clue -';
     answer = [];
     clicked = [];
     draw_array = [drawFrame1, drawFrame2, drawFrame3, drawFrame4, drawHead, drawBody, drawLeftArm, drawRightArm, drawLeftLeg, drawRightLeg]
@@ -368,7 +376,6 @@ window.onload = function () {
     life_wrapper.innerHTML = `현재 남은 목숨은 ${lives}개 입니다!`;
     count_wrapper.innerHTML = `${chosen_category_problems_now} / ${chosen_category_problems_count}`;
   };
-
   hint_button.onclick = showHint;
   replay_button.onclick = () => reset('start');
   back_button.onclick = () => onClickStartButton('back');
@@ -389,6 +396,16 @@ window.onload = function () {
 // category 별 문제 setting -> start -> prototype 용으로 간단히 -> 완료
 
 
-// design 적인 측면 좀 잘 잡으면 마무리일 것같다. 
+// design 적인 측면 좀 잘 잡으면 마무리일 것같다. -> layout 잡아주기
 // 반응형 잡기
 // 중복되는 코드들 수정하고 마무리 
+
+/* 
+design 추가로 잡아야 할 부분 -> cateogry 쪽  
+start 쪽도 심심
+design 느낌 대로 하는중 + problem-header-wrapper 카테고리로 돌아갈 때 display 수정 시키기 ( header-wrapper는 display: block;으로 바꾸기  )
+
+clue 같은 경우 좀 강조되게 clue 라는 거 알려줄 수 있게 세팅
+game over 시 modal 이용해서 게임 오버 되었고 button 클릭 시 다시 카테고리로 보내기
+전체적으로 감싸는 wrapper 하나 만들기
+*/
