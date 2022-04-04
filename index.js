@@ -43,11 +43,7 @@ const categories = ['Animals', 'Home', 'Clothes', 'Food', 'Jobs', 'Sports', 'Cou
 const problem_words = [
   [
     { problem: 'dog', hint: 'It likes people' },
-    // test 때문에 잠시 주석 처리
-    // { problem: 'monkey', hint: 'it likes bananas' },
-    // { problem: 'lion', hint: 'It is king of animals' },
-    // { problem: 'tiger', hint: 'it has stripes on its body' },
-    // { problem: 'cat', hint: 'It doesn\'t care about people ' }
+    { problem: 'cat', hint: 'It doesn\'t care about people ' }
   ]
   ,
   [
@@ -187,11 +183,12 @@ window.onload = function () {
 
   function initStart() {
     end_modal.style.display = 'none'
-    problem_page_container.style.display = 'block'
+    problem_page_container.style.display = 'none'
     loading_container.style.display = 'flex';
     header_container.style.display = 'block';
     problem_header_container.style.display = 'none';
     count_wrapper.innerHTML = '';
+    category_wrapper.innerHTML = '';
     setTimeout(() => {
         start_container.style.display = 'block';
         loading_container.style.display = 'none'
@@ -374,6 +371,7 @@ window.onload = function () {
   modal_button.onclick = ()  => initStart();
 }
 
+    
 // 기본적으로 구현할려고 했던 기능들은 전부 구현해놓은 상태
 
 // 이제 문제 맞춘 경우에 다음 문제로 넘어가는 logic ( 맞은 count + 문제의 총수를 오른쪽 위에 표현하면 좋을 것 같다. ) -> 구현 start -> 변수는 세팅 이제 이걸 html tag에 맞게 뿌려주면 된다. prototype을 통해 화면에 어떻게 나오는 지 대략적으로 파악한 후에 js로 구현 -> 구현 완료
