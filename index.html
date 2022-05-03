@@ -36,23 +36,25 @@
         <div class="category-wrapper__wrap dashed-wrap"></div>
       </section>
       <div class="problem-container">
-        <section class="alphabet-wrapper"></section>
-        <section class="problem-wrapper">
-          <h3 class="problem-wrapper__chosen-category">
-            <!-- 선택한 카테고리는 Animals 입니다. -->
-          </h3>
-          <div class="problem-wrapper__problem"></div>
-          <div class="problem-wrapper__my-lives"></div>
-          <div class="problem-wrapper__clue">Clue -</div>
+        <section><div class="collection-alphabet-wrapper"></div></section>
+        <section>
+          <div class="problem-wrapper">
+            <div class="problem-wrapper__canvas">
+              <canvas id="hangman" width="1920" height="937"></canvas>
+            </div>
+            <div class="problem-wrapper__hint">
+              <img class="problem-wrapper__img" src="./img/dog.jpg" alt="img" />
+            </div>
+            <h3 class="problem-wrapper__chosen-category"></h3>
+            <div class="problem-wrapper__problem"></div>
+          </div>
+          <footer class="button-wrapper">
+            <button class="button-wrapper__hint-button">Hint</button>
+            <button class="button-wrapper__replay-button">Reset</button>
+            <button class="button-wrapper__back-button">Back</button>
+          </footer>
         </section>
-        <section class="canvas-wrapper">
-          <canvas id="hangman"></canvas>
-        </section>
-        <footer class="button-wrapper">
-          <button class="button-wrapper__hint-button">Hint</button>
-          <button class="button-wrapper__replay-button">Reset</button>
-          <button class="button-wrapper__back-button">Back</button>
-        </footer>
+        <section><div class="alphabet-wrapper"></div></section>
       </div>
       <div class="congratulation-modal">
         <div class="congratulation-modal__wrap">
