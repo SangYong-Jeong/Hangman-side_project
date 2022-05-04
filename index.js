@@ -6,15 +6,15 @@ const categories = ['Animals', 'Home', 'Clothes', 'Food', 'Jobs', 'Sports', 'Cou
 const problem_words = [
   [
     { problem: 'DOG', hint: './img/dog.jpg' },
-    // { problem: 'CAT' },
-    // { problem: 'FROG' },
-    // { problem: 'CHICKEN' },
-    // { problem: 'TURTLE' },
-    // { problem: 'CRAB' },
-    // { problem: 'RABBIT' },
-    // { problem: 'SHARK' },
-    // { problem: 'CROCODILE' },
-    // { problem: 'GIRAFFE' },
+    { problem: 'CAT', hint: './img/cate.jpg' },
+    { problem: 'FROG', hint: './img/frog.jpg' },
+    { problem: 'CHICKEN' , hint: './img/chicken.jpg'},
+    { problem: 'TURTLE', hint: './img/turtle.jpg' },
+    { problem: 'CRAB' , hint: './img/crab.jpg'},
+    { problem: 'RABBIT', hint: './img/rabbit.jpg' },
+    { problem: 'SHARK', hint: './img/shark.jpg' },
+    { problem: 'CROCODILE', hint: './img/crocodile.jpg' },
+    { problem: 'GIRAFFE' , hint: './img/giraffe.jpg'},
   ]
   ,
   [
@@ -319,8 +319,13 @@ window.onload = function () {
 
   function validateAnswer() {
     if (!answer.includes('_')) {
-      // 정답인 경우이다. 이 경우 chosen_problem_update 작업 필요
-      reset('update');
+      hangman.style.display = 'none';
+      hint_wrapper.style.display = 'flex';
+      setTimeout(() => {
+        hangman.style.display = 'block';
+        hint_wrapper.style.display = 'none';
+        reset('update');
+      }, 5000);
     }
   }
 
@@ -332,9 +337,22 @@ window.onload = function () {
     `;
     }
   }
-
   function updateLives () {
     lives -= 1;
+    if (lives === 0) {
+      const chosen_problem_word_arr = chosen_problem_word.split('');
+      problem_wrapper.innerHTML = '';
+      for (let x of chosen_problem_word_arr) {
+        const answer_index = answer.indexOf(x);
+        if (answer_index !== -1) problem_wrapper.innerHTML += `
+    <div class="problem-wrapper__spelling">${x}</div>`;
+        else problem_wrapper.innerHTML += `<div class="problem-wrapper__spelling text-red">${x}</div>`;
+      }
+      setTimeout(() => {
+        hangman.style.display = 'none';
+        hint_wrapper.style.display = 'flex';
+      }, 1000);
+    }
   }
 
   // canvas function
@@ -455,7 +473,7 @@ window.onload = function () {
     }, 5000);
   }
 
-  function reset (op) {hint_img
+  function reset (op) {
     lives = 8;
     answer = [];
     clicked = [];
@@ -477,6 +495,10 @@ window.onload = function () {
     if (op === 'start') {
       chosen_category_problems = shuffleProblem([...problem_words[chosen_category_id]]);
       chosen_category_problems_count = chosen_category_problems.length;
+      if (hangman.style.display === 'none') {
+        hangman.style.display = 'block';
+        hint_wrapper.style.display = 'none';
+      }
     }
     if (chosen_category_problems.length === 0) {
       // modal 띄우는 로직 하고 함수 종료
@@ -491,6 +513,7 @@ window.onload = function () {
     makeButtons();
     makeCollectionButtons();
     initCanvas();
+    problem_wrapper.innerHTML = '';
     for (let i = 0; i < chosen_problem_word.length; i++) {
       problem_wrapper.innerHTML += `
       <div class="problem-wrapper__spelling"></div>

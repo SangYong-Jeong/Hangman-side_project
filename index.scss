@@ -221,11 +221,11 @@ body {
       justify-content: center;
     }
     &:nth-child(2) {
-      width: 76%;
+      width: 73%;
       margin: 0 1.5%;
     }
     &:last-child {
-      width: 15%;
+      width: 18%;
     }
   }
 }
@@ -409,6 +409,9 @@ body {
     border: 2px solid #f5f6f7;
     &:last-child {
       margin-right: 0;
+    }
+    &.text-red {
+      color: red;
     }
   }
 }
