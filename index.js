@@ -6,112 +6,110 @@ const categories = ['Animals', 'Home', 'Clothes', 'Food', 'Jobs', 'Sports', 'Cou
 const problem_words = [
   [
     { problem: 'DOG', hint: './img/dog.jpg' },
-    { problem: 'CAT', hint: './img/cate.jpg' },
-    { problem: 'FROG', hint: './img/frog.jpg' },
-    { problem: 'CHICKEN' , hint: './img/chicken.jpg'},
-    { problem: 'TURTLE', hint: './img/turtle.jpg' },
-    { problem: 'CRAB' , hint: './img/crab.jpg'},
+    { problem: 'CAT', hint: './img/cat.jpg' },
+    // { problem: 'FROG', hint: './img/frog.jpg' },
+    // { problem: 'CHICKEN' , hint: './img/chicken.jpg'},
+    // { problem: 'TURTLE', hint: './img/turtle.jpg' },
+    // { problem: 'CRAB' , hint: './img/crab.jpg'},
     { problem: 'RABBIT', hint: './img/rabbit.jpg' },
-    { problem: 'SHARK', hint: './img/shark.jpg' },
-    { problem: 'CROCODILE', hint: './img/crocodile.jpg' },
-    { problem: 'GIRAFFE' , hint: './img/giraffe.jpg'},
+    // { problem: 'SHARK', hint: './img/shark.jpg' },
+    // { problem: 'CROCODILE', hint: './img/crocodile.jpg' },
+    // { problem: 'GIRAFFE' , hint: './img/giraffe.jpg'},
   ]
   ,
   [
-    { problem: 'SOFA' },
-    { problem: 'BED' },
-    { problem: 'COMPUTER' },
-    { problem: 'AIRCONDITIONER' },
-    { problem: 'MIRROR' },
-    { problem: 'BIN' },
-    { problem: 'CHARE' },
-    { problem: 'DOOR' },
-    { problem: 'PICTURE' },
-    { problem: 'FIREPLACE' },
+    { problem: 'SOFA', hint: './img/sofa.jpg' },
+    { problem: 'BED', hint: './img/bed.jpg' },
+    { problem: 'COMPUTER', hint: './img/computer.jpg' },
+    { problem: 'AIRCONDITIONER', hint: './img/airconditional.jpg' },
+    { problem: 'MIRROR', hint: './img/mirror.jpg' },
+    { problem: 'BIN', hint: './img/bin.jpg' },
+    { problem: 'CHAIR', hint: './img/chair.jpg' },
+    { problem: 'DOOR', hint: './img/door.png' },
+    { problem: 'PICTURE', hint: './img/picture.png' },
+    { problem: 'FIREPLACE', hint: './img/fireplace.jpg' },
   ],
   [
-    { problem: 'SOCKS' },
-    { problem: 'TSHIRT' },
-    { problem: 'SUIT' },
-    { problem: 'BELT' },
-    { problem: 'PANTS' },
-    { problem: 'VEST' },
-    { problem: 'GLOVES' },
-    { problem: 'DRESS' },
-    { problem: 'RING' },
-    { problem: 'SKIRT' },
+    { problem: 'SOCKS', hint: './img/socks.jpg' },
+    { problem: 'TSHIRT', hint: './img/tshirt.png' },
+    { problem: 'SUIT', hint: './img/suit.jpg' },
+    { problem: 'BELT', hint: './img/belt.jpg' },
+    { problem: 'PANTS', hint: './img/pants.jpg' },
+    { problem: 'HELMET', hint: './img/helmet.jpg' },
+    { problem: 'GLOVES', hint: './img/gloves.jpg' },
+    { problem: 'DRESS', hint: './img/dress.jpg' },
+    { problem: 'RING', hint: './img/ring.jpg' },
+    { problem: 'SKIRT', hint: './img/skirt.jpg' },
   ],
   [
-    { problem: 'CHOCOLATE' },
-    { problem: 'HAMBURGER' },
-    { problem: 'NOODLES' },
-    { problem: 'BAGUETTE' },
-    { problem: 'APPLE' },
-    { problem: 'SANDWICH' },
-    { problem: 'PEAS' },
-    { problem: 'MANGOES' },
-    { problem: 'MUFFIN' },
-    { problem: 'ORANGES' },
+    { problem: 'CHOCOLATE', hint: './img/chocolate.jpg' },
+    { problem: 'HAMBURGER', hint: './img/hamburger.jpg' },
+    { problem: 'NOODLES', hint: './img/noodles.jpg' },
+    { problem: 'BAGUETTE', hint: './img/baguette.jpg' },
+    { problem: 'APPLE', hint: './img/apple.jpg' },
+    { problem: 'SANDWICH', hint: './img/sandwich.jpg' },
+    { problem: 'PEAS', hint: './img/peas.jpg' },
+    { problem: 'MANGOES', hint: './img/mangoes.jpg' },
+    { problem: 'MUFFIN', hint: './img/muffin.jpg' },
+    { problem: 'ORANGES', hint: './img/oranges.jpg' },
   ],
   [
-    { problem: 'DOCTOR' },
-    { problem: 'POLICEMAN' },
-    { problem: 'NURSE' },
-    { problem: 'MECHANIC' },
-    { problem: 'ARTIST' },
-    { problem: 'DANCER' },
-    { problem: 'FIREFIGHTER' },
-    { problem: 'HAIRDRESSER' },
-    { problem: 'PILOT' },
-    { problem: 'DRIVER' },
+    { problem: 'DOCTOR', hint: './img/doctor.jpg' },
+    { problem: 'POLICEMAN', hint: './img/policeman.jpg' },
+    { problem: 'NURSE', hint: './img/nurse.jpg' },
+    { problem: 'MECHANIC', hint: './img/mechanic.jpg' },
+    { problem: 'DANCER', hint: './img/dancer.jpg' },
+    { problem: 'FIREFIGHTER', hint: './img/firefighter.jpg' },
+    { problem: 'HAIRDRESSER', hint: './img/hairdresser.jpg' },
+    { problem: 'PILOT', hint: './img/pilot.jpg' },
+    { problem: 'DRIVER', hint: './img/driver.jpg' },
   ],
   [
-    { problem: 'SOCCER' },
-    { problem: 'CYCLING' },
-    { problem: 'WRESTLING' },
-    { problem: 'DIVING' },
-    { problem: 'BASKETBALL' },
-    { problem: 'BASEBALL' },
-    { problem: 'HOCKEY' },
-    { problem: 'BOWLING' },
-    { problem: 'SWIMMING' },
-    { problem: 'BOXING' },
+    { problem: 'SOCCER', hint: './img/soccer.jpg' },
+    { problem: 'CYCLING', hint: './img/cycling.jpg' },
+    { problem: 'WRESTLING', hint: './img/wrestling.jpg' },
+    { problem: 'DIVING', hint: './img/diving.jpg' },
+    { problem: 'BASKETBALL', hint: './img/basketball.jpg' },
+    { problem: 'BASEBALL', hint: './img/baseball.jpg' },
+    { problem: 'HOCKEY', hint: './img/hockey.jpg' },
+    { problem: 'BOWLING', hint: './img/bowling.jpg' },
+    { problem: 'SWIMMING', hint: './img/swimming.jpg' },
+    { problem: 'BOXING', hint: './img/boxing.jpg' },
   ],
   [
-    { problem: 'CHINA' },
-    { problem: 'AMERICA' },
-    { problem: 'AUSTRALIA' },
-    { problem: 'CANADA' },
-    { problem: 'KOREA' },
-    { problem: 'FRANCE' },
-    { problem: 'ENGLAND' },
-    { problem: 'SPAIN' },
-    { problem: 'INDIA' },
-    { problem: 'ITALY' },
+    { problem: 'CHINA', hint: './img/china.png' },
+    { problem: 'AMERICA', hint: './img/america.png' },
+    { problem: 'AUSTRAILIA', hint: './img/austrailia.png' },
+    { problem: 'CANADA', hint: './img/canada.png' },
+    { problem: 'KOREA', hint: './img/korea.png' },
+    { problem: 'FRANCE', hint: './img/france.png' },
+    { problem: 'ENGLAND', hint: './img/england.png' },
+    { problem: 'SPAIN', hint: './img/spain.png' },
+    { problem: 'INDIA', hint: './img/india.png' },
+    { problem: 'ITALY', hint: './img/italy.png' },
   ],
   [
-    { problem: 'BLUE' },
-    { problem: 'RED' },
-    { problem: 'YELLOW' },
-    { problem: 'BLACK' },
-    { problem: 'ORANGE' },
-    { problem: 'PURPLE' },
-    { problem: 'BLUE' },
-    { problem: 'GREEN' },
-    { problem: 'WHITE' },
-    { problem: 'GREY' },
+    { problem: 'BLUE', hint: './img/blue.jpg' },
+    { problem: 'RED', hint: './img/red.jpg' },
+    { problem: 'YELLOW', hint: './img/yellow.jpg' },
+    { problem: 'BLACK', hint: './img/black.jpg' },
+    { problem: 'ORANGE', hint: './img/orange.jpg' },
+    { problem: 'PURPLE', hint: './img/purple.jpg' },
+    { problem: 'GREEN', hint: './img/green.jpg' },
+    { problem: 'WHITE', hint: './img/white.jpg' },
+    { problem: 'GREY', hint: './img/grey.jpg' },
   ],
   [
-    { problem: 'BOAT' },
-    { problem: 'BIKE' },
-    { problem: 'CAR' },
-    { problem: 'SCOOTER' },
-    { problem: 'BUS' },
-    { problem: 'TRUCK' },
-    { problem: 'SKATEBOARD' },
-    { problem: 'PLANE' },
-    { problem: 'TRAIN' },
-    { problem: 'HELICOPTER' },
+    { problem: 'BOAT', hint: './img/boat.jpg' },
+    { problem: 'BIKE', hint: './img/bike.jpg' },
+    { problem: 'CAR', hint: './img/car.jpg' },
+    { problem: 'SCOOTER', hint: './img/scooter.jpg' },
+    { problem: 'BUS', hint: './img/bus.jpg' },
+    { problem: 'TRUCK', hint: './img/truck.jpg' },
+    { problem: 'SKATEBOARD', hint: './img/skateboard.jpg' },
+    { problem: 'PLANE', hint: './img/plane.jpg' },
+    { problem: 'TRAIN', hint: './img/train.jpg' },
+    { problem: 'HELICOPTER', hint: './img/helicopter.jpg' },
   ]
 ];
 
@@ -149,7 +147,7 @@ window.onload = function () {
   const start_button = document.querySelector('.start-wrapper__button');
   const hint_button = document.querySelector('.button-wrapper__hint-button');
   const replay_button = document.querySelector('.button-wrapper__replay-button');
-  const back_button = document.querySelector('.button-wrapper__back-button')
+  // const back_button = document.querySelector('.button-wrapper__back-button')
   const modal_button = document.querySelector('.congratulation-modal__button');
 
   // variables
@@ -164,6 +162,7 @@ window.onload = function () {
   let clicked = [];
   let answer = [];
   let lives = 8;
+  let on_hint = false;
 
   // canvas 
   let draw_array = [
@@ -239,20 +238,20 @@ window.onload = function () {
 
     function makeButtons (wrong_spelling) {
       alphabet_container.innerHTML = '';
-    for (let i = 0; i < consonant_alphabet.length; i++) {
+      for (let i = 0; i < consonant_alphabet.length; i++) {
       const list = document.createElement('div');
       if (answer.includes(consonant_alphabet[i]) || lives === 0) list.classList.add('disabled');
       else {
-        if (wrong_spelling === consonant_alphabet[i] || clicked.includes(consonant_alphabet[i]) ) {
+        if (wrong_spelling === consonant_alphabet[i] || clicked.includes(consonant_alphabet[i]) )  {
           if (!clicked.includes(consonant_alphabet[i])) clicked.push(consonant_alphabet[i])
-          list.classList.add('disabled');
+            list.classList.add('disabled');
+          }
+          else list.onclick = onClicKButton;
         }
-        else list.onclick = onClicKButton;
-      }
       list.classList.add('alphabet-wrapper__alphabet');
       list.innerHTML = consonant_alphabet[i];
       alphabet_container.appendChild(list);
-    }
+      }
     }
   
   function makeCollectionButtons(wrong_spelling) {
@@ -308,10 +307,12 @@ window.onload = function () {
         index = chosen_problem_word.indexOf(spelling, index + 1);
       }
       makeButtons();
+      makeCollectionButtons();
       updateAnswerElement();
     } else {
       updateLives();
       makeButtons(spelling);
+      makeCollectionButtons();
       const frame = draw_array.shift();
       if (frame) frame();
     }
@@ -340,6 +341,7 @@ window.onload = function () {
   function updateLives () {
     lives -= 1;
     if (lives === 0) {
+      hint_img.src = chosen_problem_hint;
       const chosen_problem_word_arr = chosen_problem_word.split('');
       problem_wrapper.innerHTML = '';
       for (let x of chosen_problem_word_arr) {
@@ -464,13 +466,17 @@ window.onload = function () {
 
   // hint
   function showHint() {
-    hangman.style.display = 'none';
-    hint_wrapper.style.display = 'flex';
-    hint_img.src = chosen_problem_hint;
-    setTimeout(() => {
-      hint_wrapper.style.display = 'none';
-      hangman.style.display = 'flex';
-    }, 5000);
+    if (on_hint === false) {
+      hangman.style.display = 'none';
+      hint_wrapper.style.display = 'flex';
+      hint_img.src = chosen_problem_hint;
+      on_hint = true;
+      setTimeout(() => {
+        hint_wrapper.style.display = 'none';
+        hangman.style.display = 'flex';
+        on_hint = false;
+      }, 5000);
+    }
   }
 
   function reset (op) {
@@ -524,7 +530,7 @@ window.onload = function () {
   };
   hint_button.onclick = showHint;
   replay_button.onclick = () => reset('start');
-  back_button.onclick = () => onClickStartButton('back');
+  // back_button.onclick = () => onClickStartButton('back');
   modal_button.onclick = ()  => initStart();
 }
 

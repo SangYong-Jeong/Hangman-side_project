@@ -320,7 +320,9 @@ body {
     height: 3.25rem;
     margin-right: 1rem;
     &:nth-child(3n) {
-      margin-right: 0;
+      @media screen and (max-width: 1845px) {
+        margin-right: 0;
+      }
     }
     @media screen and (min-width:1198px) and (max-width: 1480px) {
       width: 2.35rem;
@@ -428,7 +430,7 @@ body {
   }
   button {
     font-family: 'Press Start 2P', cursive;
-    width: 33.3333%;
+    width: 50%;
     background-color: $base-color;
     color: $white;
     height: 100%;
